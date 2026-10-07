@@ -1,12 +1,12 @@
 # POSTTEST 4 PBO 2026
 
-**Nama:** Arif Abdurrahman Siddiq
-**NIM:** 2509106064
-**Kelas:** B1'25
+Nama: Arif Abdurrahman Siddiq
+NIM: 2509106064
+Kelas: B1'25
 
 ## 1. Deskripsi Program
 
-Program ini merupakan simulasi sederhana **deck-building card battle** berbasis giliran. Program menggunakan konsep Object-Oriented Programming (OOP) seperti:
+Program ini merupakan simulasi sederhana deck-building card battle berbasis giliran. Program menggunakan konsep Object-Oriented Programming (OOP) seperti:
 
 * Class dan object
 * Constructor
@@ -46,9 +46,9 @@ class Kartu:
 
 Penjelasan:
 
-* `nama_game`, `total_kartu_dibuat`, dan `kategori_game` merupakan **class attribute**.
+* `nama_game`, `total_kartu_dibuat`, dan `kategori_game` merupakan class attribute.
 * `nama` dan `tipe` merupakan atribut object.
-* `__cost` dan `__damage` menggunakan **private attribute**.
+* `__cost` dan `__damage` menggunakan private attribute.
 * `total_kartu_dibuat` bertambah setiap kali object `Kartu` dibuat.
 
 ## B. Method Info Kartu
@@ -122,9 +122,9 @@ def validasi_cost(cost):
     return True
 ```
 
-`total_kartu()` merupakan **class method** karena menggunakan data milik class melalui `cls`.
+`total_kartu()` merupakan class method karena menggunakan data milik class melalui `cls`.
 
-`validasi_cost()` merupakan **static method** karena tidak membutuhkan data object maupun class. Method ini hanya digunakan untuk mengecek apakah nilai cost valid.
+`validasi_cost()` merupakan static method karena tidak membutuhkan data object maupun class. Method ini hanya digunakan untuk mengecek apakah nilai cost valid.
 
 ---
 
@@ -175,7 +175,7 @@ Jika tidak kosong, program melakukan perulangan untuk menampilkan semua kartu ya
 
 # 4. Class Karakter
 
-`Karakter` merupakan **superclass** yang menjadi dasar untuk class `Hero` dan `Musuh`.
+`Karakter` merupakan superclass yang menjadi dasar untuk class `Hero` dan `Musuh`.
 
 ## A. Constructor dan Encapsulation
 
@@ -192,9 +192,9 @@ class Karakter:
         self.__id_karakter = id(self)
 ```
 
-`_nama` dan `_health` menggunakan **protected attribute**. Atribut ini dapat digunakan oleh subclass seperti `Hero` dan `Musuh`.
+`_nama` dan `_health` menggunakan protected attribute. Atribut ini dapat digunakan oleh subclass seperti `Hero` dan `Musuh`.
 
-`__id_karakter` menggunakan **private attribute** karena hanya menjadi data internal dari `Karakter`.
+`__id_karakter` menggunakan private attribute karena hanya menjadi data internal dari `Karakter`.
 
 ## B. Method Status
 
@@ -206,7 +206,7 @@ def status(self):
 
 Method `status()` menampilkan informasi dasar karakter.
 
-Method ini nantinya **dioverride** oleh `Hero` dan `Musuh` agar masing-masing dapat menampilkan informasi yang lebih spesifik.
+Method ini nantinya dioverride oleh `Hero` dan `Musuh` agar masing-masing dapat menampilkan informasi yang lebih spesifik.
 
 ## C. Property Health
 
@@ -271,7 +271,7 @@ Atribut khusus `Hero`:
 * `__block` untuk menyimpan nilai pertahanan hero.
 * `energy` untuk menyimpan energi saat ini.
 
-`self.deck = Deck()` menunjukkan **composition**, karena object `Deck` dibuat langsung di dalam object `Hero`.
+`self.deck = Deck()` menunjukkan composition, karena object `Deck` dibuat langsung di dalam object `Hero`.
 
 ## B. Method Overriding
 
@@ -309,7 +309,7 @@ def gunakan_kartu(self, kartu: Kartu, target: 'Musuh'):
         print(f"{kartu.nama} tidak terdapat dalam deck {self._nama}.")
 ```
 
-Method ini menunjukkan **association** karena `Hero` berinteraksi dengan object `Kartu` dan `Musuh`.
+Method ini menunjukkan association karena `Hero` berinteraksi dengan object `Kartu` dan `Musuh`.
 
 Kartu dicek terlebih dahulu apakah terdapat di dalam deck.
 
@@ -529,7 +529,7 @@ Relasinya:
 Hero ◆──── Deck
 ```
 
-`◆` menunjukkan **composition**.
+`◆` menunjukkan composition.
 
 ---
 
@@ -562,7 +562,7 @@ deck_baru.tambah_kartu(strike)
 deck_baru.tambah_kartu(defend)
 ```
 
-Karena `Kartu` sudah dibuat secara independen dan masih dapat digunakan di luar `Deck`, relasi ini merupakan **aggregation**.
+Karena `Kartu` sudah dibuat secara independen dan masih dapat digunakan di luar `Deck`, relasi ini merupakan aggregation.
 
 Relasinya:
 
@@ -570,7 +570,7 @@ Relasinya:
 Deck ◇──── Kartu
 ```
 
-`◇` menunjukkan **aggregation**.
+`◇` menunjukkan aggregation.
 
 ---
 
@@ -598,7 +598,7 @@ Hero ───── Kartu
     └──── Musuh
 ```
 
-Relasi ini merupakan **association** karena ketiga object dapat tetap berdiri sendiri.
+Relasi ini merupakan association karena ketiga object dapat tetap berdiri sendiri.
 
 ---
 
@@ -799,10 +799,10 @@ Program ini menerapkan beberapa konsep OOP melalui class `Kartu`, `Deck`, `Karak
 
 Konsep yang diterapkan meliputi:
 
-* **Encapsulation** melalui private dan protected attribute serta property.
-* **Inheritance** melalui `Hero(Karakter)` dan `Musuh(Karakter)`.
-* **Method overriding** melalui method `status()` pada `Hero` dan `Musuh`.
-* **Association** melalui penggunaan `Kartu` dan `Musuh` oleh `Hero`.
-* **Aggregation** melalui `Deck` yang menyimpan object `Kartu` yang dibuat secara independen.
-* **Composition** melalui `Hero` yang membuat object `Deck` secara langsung.
-* **Class method** dan **static method** untuk fungsi yang berkaitan dengan class maupun validasi.
+* Encapsulation melalui private dan protected attribute serta property.
+* Inheritance melalui `Hero(Karakter)` dan `Musuh(Karakter)`.
+* Method overriding melalui method `status()` pada `Hero` dan `Musuh`.
+* Association melalui penggunaan `Kartu` dan `Musuh` oleh `Hero`.
+* Aggregation melalui `Deck` yang menyimpan object `Kartu` yang dibuat secara independen.
+* Composition melalui `Hero` yang membuat object `Deck` secara langsung.
+* Class method dan static method untuk fungsi yang berkaitan dengan class maupun validasi.
