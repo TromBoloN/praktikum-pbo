@@ -152,15 +152,9 @@ Class `Musuh` digunakan untuk membuat dan mengatur data lawan NPC.
 
 # Cara Menjalankan Program
 
-Pastikan Python telah terpasang, kemudian jalankan program dari folder `post-test/post-test-pbo-1`:
+Jalankan program dari folder `post-test/post-test-pbo-1`:
 
 ```bash
 python main.py
-```
-
-Atau dari root repository:
-
-```bash
-python post-test/post-test-pbo-1/main.py
 ```
 
