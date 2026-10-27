@@ -147,6 +147,7 @@ class Hero(Karakter):
         print(f"  Block       : {self.__block}")
         print(f"  Total Kartu : {len(self.deck.daftar_kartu)}")
         
+    # ASOSIASI: Hero menggunakan objek Kartu    
     def gunakan_kartu(self, kartu: Kartu, target: 'Musuh'):
         if kartu in self.deck.daftar_kartu:
             if self.energy >= kartu.cost:
