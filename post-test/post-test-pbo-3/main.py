@@ -130,7 +130,6 @@ class KartuSpesial(Kartu):
     def deskripsi(self):
         return f"Kehilangan {self.biaya_hp} HP, dapat {self._nilai} energi."
 
-#AGREGASI: Deck menampung objek Kartu yang dibuat secara independen    
 class Deck: 
     def __init__(self):
         self.daftar_kartu = []
@@ -148,18 +147,14 @@ class Deck:
         for idx, k in enumerate(self.daftar_kartu, 1):
             print(f"{idx}. {k.nama} - Tipe: {k.tipe}, Cost: {k.cost}, Efek: {k.deskripsi()}")
 
-#Superclass 
 class Karakter:
     nama_game = "Roguelite Card Battle Simulator"
     
     def __init__(self, nama, health):
-        # Protected attribute untuk nama dan darah karakter
         self._nama = nama
         self._health = health
-        # Private attribute untuk id karakter
         self.__id_karakter = id(self)
      
-    #Method yang bakal di override subclass   
     def status(self):
         print(f"Nama Karakter: {self._nama}")
         print(f"{self._nama} - Health: {self._health}")
@@ -180,24 +175,19 @@ class Karakter:
         else:
             print(f"  Status      : Health tidak boleh negatif. Perubahan health {self._nama} dibatalkan.")
 
-# Subclass 1
 class Hero(Karakter):
     max_energy = 3
     total_hero = 0
 
     def __init__(self, nama, class_hero, health, block):
-        # Memanggil konstruktor superclass
         super().__init__(nama, health)
-        # Atribut spesifik hero
         self.class_hero = class_hero
         self.__block = block
         self.energy = Hero.max_energy
         
-        # KOMPOSISI: Hero membuat dan memniliki objek Deck internal secara langsung
         self.deck = Deck()
         Hero.total_hero += 1
 
-    #METHOD OVERRIDING: menggantikan logika status() dari superclass Karakter
     def status(self):
         print(f"[Hero] {self._nama}")
         print(f"  Class       : {self.class_hero}")
@@ -205,7 +195,6 @@ class Hero(Karakter):
         print(f"  Block       : {self.__block}")
         print(f"  Total Kartu : {len(self.deck.daftar_kartu)}")
         
-    # ASOSIASI: Hero menggunakan objek Kartu    
     def gunakan_kartu(self, kartu: Kartu, target):
         if kartu not in self.deck.daftar_kartu:
             print(f"{kartu.nama} tidak terdapat dalam deck {self._nama}.")
