@@ -154,8 +154,6 @@ Program tidak memakai rantai `if/elif` yang mengecek `type()` atau string jenis 
 
 ## 6. Hasil Program
 
-> Ganti blok ini dengan screenshot terminal dari program kamu.
-
 ```text
 ====================================================
       Simulasi Deck Building Berbasis Giliran       
