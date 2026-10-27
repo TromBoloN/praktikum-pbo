@@ -1,6 +1,6 @@
 ## Class Diagram
 
-![Class Diagram](relasi.uml.png)
+![Class Diagram](relasi-uml.png)
 
 **Asosiasi (Hero → Kartu):** ...
 **Agregasi (Deck → Kartu):** ...
